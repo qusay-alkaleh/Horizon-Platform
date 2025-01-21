@@ -1,15 +1,17 @@
+import GoogleLoginButton from "@/components/GoogleLoginButton";
 import HeaderBox from "@/components/HeaderBox";
 import RightSideBar from "@/components/RightSideBar";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { redirect } from "next/navigation";
+import { useState } from "react";
 
 const Home = async () => {
   const loggedIn = await getLoggedInUser();
 
   // check of the user are logged in, if not redirect him to sign-in page
   // note: not useed router because we need this component as server component
-  if (!loggedIn) redirect("/sign-in");
+  // if (!loggedIn) redirect("/sign-in");
 
   return (
     <section className="home">
